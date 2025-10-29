@@ -5,14 +5,12 @@ class StringCalculator {
   }
 }
 
-
 class StringCalculatorSameNumber {
   int add(String numbers) {
     if (numbers.isEmpty) return 0;
     return int.parse(numbers);
   }
 }
-
 
 class StringCalculatorCommaSeparated {
   int add(String numbers) {
@@ -89,4 +87,3 @@ class StringCalculatorNegativeNumberNotAllowed {
     return values.reduce((a, b) => a + b);
   }
 }
-
