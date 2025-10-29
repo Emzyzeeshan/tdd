@@ -18,5 +18,9 @@ void main() {
     final calculator = StringCalculatorMultipleCommaSeparated();
     expect(calculator.add('1,2,3,4,5'), equals(15));
   });
+  test('handles new lines between numbers', () {
+    final calculator = StringCalculatorNewLine();
+    expect(calculator.add('1\n2,3'), equals(6));
+  });
 
 }
