@@ -46,3 +46,21 @@ class StringCalculatorNewLine {
   }
 }
 
+class StringCalculatorCustomDelimiters {
+  int add(String numbers) {
+    if (numbers.isEmpty) return 0;
+
+    String delimiter = ',';
+    String nums = numbers;
+
+    if (numbers.startsWith('//')) {
+      final parts = numbers.split('\n');
+      delimiter = parts[0].substring(2);
+      nums = parts[1];
+    }
+
+    final normalized = nums.replaceAll('\n', delimiter);
+    final values = normalized.split(delimiter);
+    return values.map(int.parse).reduce((a, b) => a + b);
+  }
+}
