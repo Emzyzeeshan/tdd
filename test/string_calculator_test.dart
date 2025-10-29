@@ -26,5 +26,14 @@ void main() {
     final calculator = StringCalculatorCustomDelimiters();
     expect(calculator.add('//;\n1;2'), equals(3));
   });
+  test('throws exception for negative numbers', () {
+    final calculator = StringCalculatorNegativeNumberNotAllowed();
+    expect(
+          () => calculator.add('1,-2,3,-4'),
+      throwsA(predicate((e) =>
+      e is Exception &&
+          e.toString().contains('negative numbers not allowed -2,-4'))),
+    );
+  });
 
 }
