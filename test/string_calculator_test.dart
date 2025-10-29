@@ -14,5 +14,9 @@ void main() {
     final calculator = StringCalculatorCommaSeparated();
     expect(calculator.add('1,5'), equals(6));
   });
+  test('returns sum of multiple comma-separated numbers', () {
+    final calculator = StringCalculatorCommaSeparated();
+    expect(calculator.add('1,2,3,4,5'), equals(15));
+  });
 
 }
