@@ -24,3 +24,14 @@ class StringCalculatorCommaSeparated {
     return parts.map(int.parse).reduce((a, b) => a + b);
   }
 }
+
+class StringCalculatorMultipleCommaSeparated {
+  int add(String numbers) {
+    if (numbers.isEmpty) return 0;
+
+    final parts = numbers.split(',');
+    if (parts.length == 1) return int.parse(parts[0]);
+
+    return parts.map(int.parse).reduce((a, b) => a + b);
+  }
+}
